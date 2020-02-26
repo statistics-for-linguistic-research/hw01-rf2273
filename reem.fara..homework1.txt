@@ -1,0 +1,76 @@
+reem faraj		homework 1
+I. Arithmatic
+
+1. y=(1/3)+(1/4)
+> y
+[1] 0.5833333
+
+
+2. > y=(2^10)+1
+> y
+[1] 1025
+ 
+3. > y=(log(1127)*(1+(400/700)))
+> y
+[1] 11.04292
+4. >a=2
+b=4
+c=-4
+x=((-b+(sqrt((b^2)-(4*a*c)))/2a)
+> x
+[1] 1025
+
+============================================
+II. Categorical Data
+1.
+> df=read.csv("NYC.csv", header=T)
+> table(df$store, df$emphasis == "emphatic" & df$word == "fouRth")
+         
+          FALSE TRUE
+  Klein's   170   46
+  Macy's    275   61
+  Saks      137   40
+> 
+> EMPH_ALL_FRTH <- subset(df, df$emphasis == "emphatic" & df$word == "fouRth", select = c("r","store","emphasis","word"))
+> + nrow(EMPH_ALL_FRTH)
+[1] 147
+===================================
+2. 
+df=read.csv("NYC.csv", header=T)
+Klein_r_flooR <- subset(df, df$r=="1" & df$store== "Klein's" & df$word == "flooR", select = c("r","store","word"))
+> > nrow(Klein_r_flooR)
+[1] 12
+
+> Klein_r_flooR <- subset(df, df$r=="0" & df$store== "Klein's" & df$word == "flooR", select = c("r","store","word"))
+>  nrow(Klein_r_flooR)
+[1] 92
+empolyees at Klein's used r 12 times out of 104 times 11.54% of the times.
+===============================
+III. Ration Data
+1.
+> DF=read.table("VOT.tsv", header=T, )
+> quantile(DF$vot)
+     0%     25%     50%     75%    100% 
+-85.290 -17.975  13.825  27.365  82.860 
+
+>summary(DF)
+   participant     language        item       repetition      vot        
+ biling00: 36   english:360   da     : 60   Min.   :1    Min.   :-85.29  
+ biling01: 36   spanish:360   de     : 60   1st Qu.:1    1st Qu.:-17.98  
+ biling02: 36                 di     : 60   Median :2    Median : 13.82  
+ biling03: 36                 dig    : 60   Mean   :2    Mean   :  4.06  
+ biling04: 36                 dog    : 60   3rd Qu.:3    3rd Qu.: 27.36  
+ biling05: 36                 dug    : 60   Max.   :3    Max.   : 82.86  
+ (Other) :504                 (Other):360                                
+> 
+2.
+>mean(DF[DF$language == "spanish", ]$vot)
+[1] -24.31306
+
+3.
+>sd(DF[DF$language == "english", ]$vot)
+[1] 19.86479
+=============
+
+
+
